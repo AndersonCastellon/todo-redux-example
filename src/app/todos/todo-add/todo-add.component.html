@@ -1,0 +1,10 @@
+<header class="header">
+  <h1>todos</h1>
+  <input
+    class="new-todo"
+    [formControl]="input"
+    (keyup.enter)="addTodo()"
+    placeholder="¿Qué deseas hacer?"
+    autofocus
+  />
+</header>

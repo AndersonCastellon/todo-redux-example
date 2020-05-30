@@ -1,0 +1,26 @@
+<footer class="footer">
+  <!-- This should be `0 items left` by default -->
+  <span class="todo-count"
+    ><strong>{{ pendings }}</strong>
+    {{ pendings > 1 ? "Pendientes" : "Pendiente" }}
+  </span>
+  <!-- Remove this if you don't implement routing -->
+  <ul class="filters">
+    <li *ngFor="let filter of filters">
+      <a
+        (click)="doFilter(filter)"
+        style="cursor: pointer;"
+        [class.selected]="filter === currentFilter"
+        >{{ filter }}</a
+      >
+    </li>
+  </ul>
+  <!-- Hidden if no completed items are left ↓ -->
+  <button
+    [hidden]="completeds === 0"
+    (click)="removeCompleted()"
+    class="clear-completed"
+  >
+    Limpiar completadas
+  </button>
+</footer>
